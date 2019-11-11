@@ -34,3 +34,20 @@ kable(object)
 ### require knitr packages
 
 summary(object)
+
+
+
+## Data Selection ----
+
+DataSet [, 1:5]
+### select Variable 1 until Variable 5
+
+DataSet [, c(2, 4:10, 12)]
+## Select variable 2, 4 to 10 and variable 12
+
+DataSet_Num <- DataSet %>%
+  select_if(is.numeric)
+### select numerical variables only, and put in new object
+
+
+
