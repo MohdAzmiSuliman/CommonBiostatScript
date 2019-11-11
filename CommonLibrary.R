@@ -2,7 +2,6 @@
 
 ## to be recategorize
 
-library(psych)
 library(ResourceSelection)
 
 
@@ -11,13 +10,19 @@ library(ResourceSelection)
 library(haven)
 ###
 
+library(foreign)
+
 ## Tools packages ----
 
-library(dplyr)
+library(tidyverse)
 ### for %>% function
 
 
+
 ## Result ----
+
+library(psych)
+### summarize data
 
 library(tidyr)
 

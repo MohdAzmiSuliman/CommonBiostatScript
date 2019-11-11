@@ -17,10 +17,19 @@ ggplot(DataSet, aes(VarNum1)) +
                             sd = sd(DataSet$VarNum1)))
 ### histogram with normal line
 
+ggplot(DataSet, aes(VarNum1)) +
+  geom_histogram() +
+  facet_grid(VarCat1~.)
+### create histogram by each of category in the VarCat1
+
+
+
 ## Bar Chart ----
 
 ggplot(DataSet, aes(VarCat1)) +
   geom_bar()
 ### basic bar chart
 
+
+## Scatterplot ----
 
