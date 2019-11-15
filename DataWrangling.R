@@ -17,6 +17,10 @@ DataSet2 <- DataSet %>% mutate (VarRename = as_factor(VarName))
 ### same with above
 ### require dplyr package
 
+DataSet <- read.spss("files.sav", use.value.label=T, to.data.frame=T)
+### read .sav file (spss)
+### require foreign package
+### convert categorical data straightaway
 
 ## Data Summary ----
 
@@ -86,6 +90,19 @@ DataSet3 <- DataSet %>%
 DataSet3 <- DataSet %>%
   mutate(VarNewCat = if_else(VarNew > 25, "Category 1", "Category 2"))
 ### Create new variable, VarNewCat, from VarNew. if VarNew value > 25, name as Category 1, otherwise name as Category 2
+
+
+## Date ----
+
+ ObjectName <- DataSet$VarDate1 %--% DataSet$VarDate2
+### calculate duration between VarDate1 and VarDate2
+### require lubridate package
+
+ObjectName2 <- as.duration(DataSet$VarDate1 %--% DataSet$VarDate2) / ddays (1)
+### calculate duration between VarDate1 and VarDate in days
+
+DataSet$VarDurationName <- as.duration(DataSet$VarDate1 %--% DataSet$VarDate2) / ddays (1)
+### calculate duration between VarDate1 and VarDate2 in days, and put inside new variables in DataSet (var name - "VarDurationName")
 
 
 
