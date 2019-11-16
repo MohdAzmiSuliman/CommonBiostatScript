@@ -30,6 +30,19 @@ ggplot(DataSet, aes(VarCat1)) +
   geom_bar()
 ### basic bar chart
 
+ggplot(DataSet, aes(x=VarCat1)) +
+  geom_bar()
+ggplot(DataSet, aes(x=factor(VarCat1))) +
+  geom_bar()
+### same output as above
+
+
+ggplot(DataSet, aes(x=factor(VarCat1), fill=factor(VarCat1))) +
+  geom_bar() +
+  facet_wrap(~VarCat2)
+### barchart for VarCat1, group by VarCat2
+### example of use - barchart for crosstab
+
 
 ## Scatterplot ----
 
