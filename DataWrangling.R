@@ -30,6 +30,9 @@ str(object)
 view(object)
 ### open object to viewer (not adviseable for rmd)
 
+glimpse(object)
+### glimpse data
+
 head(object)
 ### display first several data 
 
