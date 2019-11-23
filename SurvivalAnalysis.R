@@ -49,8 +49,17 @@ ggsurvplot(KMEstimateObject2,
 
 ## Median Survival Time ----
 
-quantile(KKMEstimateObject, probs = 0.5)
+quantile(KKEstimateObject, probs = 0.5)
 
 
 ## Model Checking ----
 
+## Estimate ----
+
+quantile(KMEstimateObject, probs = c(0.25, 0.5, 0.75))
+### estimate the duration at probability 25th, 50th and 75th percentile
+### can refer median survival time
+
+summary(KMEstimateObject, times = c(20, 40, 60))
+### estimate probability at duration 20 unit, 40 unit or 60 unit
+### depend on the unit of the duration. e.g. 20 unit may mean 20 days
